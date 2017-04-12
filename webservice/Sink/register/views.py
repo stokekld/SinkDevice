@@ -6,7 +6,7 @@ import os
 
 from .models import db
 
-@service.route('/register', methods=['POST'])
+@service.route('/register', methods=['GET'])
 def setRegister():
     if 'data' in request.form:
         db.register.insert({
@@ -15,7 +15,7 @@ def setRegister():
         })
     return Response()
 
-@service.route('/register', methods=['GET'])
+@service.route('/getRegisters', methods=['GET'])
 def getRegister():
 
     file = 'registers.xlsx'
