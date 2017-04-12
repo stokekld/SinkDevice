@@ -12,3 +12,6 @@ $(PACKAGE):
 	mkdir -p $(PACKAGE)/etc/$(PROJECT)
 	cp -r ../webservice/* $(PACKAGE)/etc/$(PROJECT)
 	$(C) $(PACKAGE)
+
+clean:
+	rm -rf $(PACKAGE)

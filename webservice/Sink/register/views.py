@@ -8,9 +8,9 @@ from .models import db
 
 @service.route('/register', methods=['GET'])
 def setRegister():
-    if 'data' in request.form:
+    if request.args.get('data'):
         db.register.insert({
-            'data': request.form['data'],
+            'data': request.args.get('data'),
             'date': datetime.now()
         })
     return Response()
@@ -27,8 +27,9 @@ def getRegister():
     registers = db.register.find()
 
     for index, register in enumerate(registers):
+	print register['date']
         worksheet.write('A' + str( index + 1), register['data'])
-        worksheet.write('B' + str( index + 1), register['date'])
+        worksheet.write('B' + str( index + 1), str(register['date']))
 
     workbook.close()
 
