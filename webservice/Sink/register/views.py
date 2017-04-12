@@ -27,7 +27,6 @@ def getRegister():
     registers = db.register.find()
 
     for index, register in enumerate(registers):
-	print register['date']
         worksheet.write('A' + str( index + 1), register['data'])
         worksheet.write('B' + str( index + 1), str(register['date']))
 
