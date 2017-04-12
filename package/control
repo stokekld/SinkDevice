@@ -1,4 +1,7 @@
 Package: sink-webservice
 Version: 0.1-1
+Priority: optional
+Section: python
+Architecture: armhf
 Maintainer: Jesus Flores <joy_warmgun@hotmail.com>
 Description: Sink Webservice
