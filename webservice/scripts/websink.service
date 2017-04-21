@@ -1,0 +1,10 @@
+[Unit]
+Description=Webservice Sink
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/etc/sink-webservice/enviroment/bin/python
+
+[Install]
+WantedBy=multi-user.target
