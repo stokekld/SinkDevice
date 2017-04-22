@@ -10,7 +10,9 @@ $(PACKAGE):
 	mkdir -p $(PACKAGE)/DEBIAN
 	cp control $(PACKAGE)/DEBIAN
 	mkdir -p $(PACKAGE)/etc/$(PROJECT)
-	cp -r ../webservice/* $(PACKAGE)/etc/$(PROJECT)
+	cp -r ../webservice/source/* $(PACKAGE)/etc/$(PROJECT)
+	mkdir -p $(PACKAGE)/lib/systemd/system/
+	cp ../webservice/scripts/websink.service $(PACKAGE)/lib/systemd/system/
 	$(C) $(PACKAGE)
 
 clean:
