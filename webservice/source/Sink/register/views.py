@@ -1,10 +1,18 @@
 from datetime import datetime
-from flask import request, send_file, Response
+from flask import request, send_file, Response, render_template
 from Sink.app import service
 from xlsxwriter import Workbook
 import os
 
 from .models import db
+
+@service.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
+
+@service.route('/principal', methods=['GET'])
+def principal():
+    return render_template('get_reg.html')
 
 @service.route('/register', methods=['GET'])
 def setRegister():
