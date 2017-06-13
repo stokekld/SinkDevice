@@ -4,7 +4,7 @@ Description=Webservice Sink
 [Service]
 Type=simple
 Restart=always
-ExecStart=/etc/sink-webservice/enviroment/bin/python
+ExecStart=/etc/sink/enviroment/bin/python /etc/sink/webservice/run.py
 
 [Install]
 WantedBy=multi-user.target
