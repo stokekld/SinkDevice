@@ -6,11 +6,11 @@ import os
 
 from .models import db
 
-@service.route('/', methods=['GET'])
-def index():
-    return render_template('index.html')
+# @service.route('/', methods=['GET'])
+# def index():
+    # return render_template('index.html')
 
-@service.route('/principal', methods=['GET'])
+@service.route('/', methods=['GET'])
 def principal():
     return render_template('get_reg.html')
 
