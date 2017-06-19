@@ -33,10 +33,10 @@
 		    <br/>
 		    <img  class="col-xs-8 col-md-offset-2" id="img_logo" src="{{ url_for('static', filename='images/logo.png') }}">
 
-		    <form id="login-form">
+		    <form id="login-form" method="post", action="auth">
 			<br/>	<br/>
-			<input id="login_username" class="form-control" type="text" placeholder="Username" required>
-			<input id="login_password" class="form-control" type="password" placeholder="Password" required>
+			<input name="user" id="login_username" class="form-control" type="text" placeholder="Username" required>
+			<input name="password" id="login_password" class="form-control" type="password" placeholder="Password" required>
 
 			<div>
 			    <br/>
