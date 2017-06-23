@@ -1,4 +1,4 @@
-from flask import redirect, url_for, request
+from flask import redirect, url_for, request, session
 from Sink.app import service
 import md5
 
@@ -9,7 +9,8 @@ def authorization():
     credentials = request.form
     device = db.device.find_one()
 
-    if device["user"] == credentials["user"] and device["password"] == md5.new(credentials["password"]).hexdigest():
+    if device['user'] == credentials['user'] and device['password'] == md5.new(credentials['password']).hexdigest():
+        session['username'] = 'admin'
         return redirect(url_for('principal'))
     else:
         return redirect(url_for('index'))
